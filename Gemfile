@@ -47,4 +47,4 @@ end
 gem 'spree', '1.1.3'
 gem 'spree_usa_epay'
 gem 'spree_skrill'
-gem 'spree_banner', :git => 'git://raw.github.com/damianogiacomello/spree_banner.git', :branch => 'master' 
+#gem 'spree_banner', :git => 'git://raw.github.com/damianogiacomello/spree_banner.git', :branch => 'master' 

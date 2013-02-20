@@ -1,14 +1,3 @@
-GIT
-  remote: git://raw.github.com/damianogiacomello/spree_banner.git
-  revision: 1633b98c839fa22ae8ea54bc1689b667166852a9
-  branch: master
-  specs:
-    spree_banner (1.1.1)
-      aws-sdk
-      formtastic
-      paperclip
-      spree_core
-
 GEM
   specs:
     actionmailer (3.2.8)
@@ -24,7 +13,7 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.3)
-    active_utils (1.0.3)
+    active_utils (1.0.5)
       activesupport (>= 2.3.11)
       i18n
     activemerchant (1.20.4)
@@ -70,14 +59,14 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    cocaine (0.2.1)
+    cocaine (0.3.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.3.3)
+    coffee-script-source (1.4.0)
     deface (0.9.1)
       nokogiri (~> 1.5.0)
       rails (~> 3.1)
@@ -90,8 +79,6 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffaker (1.12.1)
-    formtastic (2.2.1)
-      actionpack (>= 3.0)
     gyoku (0.4.6)
       builder (>= 2.1.2)
     highline (1.6.11)
@@ -103,14 +90,13 @@ GEM
       rack
     i18n (0.6.1)
     journey (1.0.4)
-    jquery-rails (2.0.2)
-      railties (>= 3.2.0, < 5.0)
+    jquery-rails (2.0.3)
+      railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.7.7)
-    kaminari (0.13.0)
+    kaminari (0.14.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-      railties (>= 3.0.0)
     kgio (2.8.0)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -178,12 +164,12 @@ GEM
       json (~> 1.4)
     rvm-capistrano (1.2.7)
       capistrano (>= 2.0.0)
-    sass (3.1.20)
-    sass-rails (3.2.5)
+    sass (3.2.5)
+    sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    savon (1.1.0)
+    savon (1.2.0)
       akami (~> 1.2.0)
       builder (>= 2.1.2)
       gyoku (~> 0.4.5)
@@ -250,9 +236,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.35)
-    uglifier (1.2.7)
+    uglifier (1.3.0)
       execjs (>= 0.3.0)
-      multi_json (~> 1.3)
+      multi_json (~> 1.0, >= 1.0.2)
     unicorn (4.6.0)
       kgio (~> 2.6)
       rack
@@ -260,7 +246,7 @@ GEM
     uuidtools (2.1.3)
     warden (1.1.1)
       rack (>= 1.0)
-    wasabi (2.5.0)
+    wasabi (2.5.1)
       httpi (~> 1.0)
       nokogiri (>= 1.4.0)
 
@@ -276,7 +262,6 @@ DEPENDENCIES
   rvm-capistrano
   sass-rails (~> 3.2.3)
   spree (= 1.1.3)
-  spree_banner!
   spree_skrill
   spree_usa_epay
   uglifier (>= 1.0.3)
