@@ -1,5 +1,6 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
+set :rvm_suby_string, '1.9.3'
 
 # Define your server here
 server "50.57.231.142", :web, :app, :db, primary: true
@@ -15,16 +16,23 @@ set :scm, "git"
 set :repository, "git@github.com:Anjali-Veer/#{application}.git"
 set :branch, "master"
 
+set :shell, '/bin/bash'
+
+set :rvm_type, :system
+
 default_run_options[:pty] = true
+default_run_options[:shell]=false
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
+  after "deploy", "deploy:migrate"
+
 
 namespace :deploy do
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do
-      run "/etc/init.d/unicorn_#{application} #{command}" # Using unicorn as the app server
+      run "sudo /etc/init.d/unicorn_#{application} #{command}" # Using unicorn as the app server
     end
   end
 
@@ -36,8 +44,6 @@ namespace :deploy do
     puts "Now edit the config files in #{shared_path}."
   end
   after "deploy:setup", "deploy:setup_config"
-  after "deploy", "deploy:cleanup"
-  after "deploy", "deploy:migrate"
 
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
