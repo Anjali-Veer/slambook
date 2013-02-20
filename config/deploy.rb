@@ -32,7 +32,7 @@ namespace :deploy do
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do
-      run "sudo /etc/init.d/unicorn_#{application} #{command}" # Using unicorn as the app server
+      run "/etc/init.d/unicorn_#{application} #{command}" # Using unicorn as the app server
     end
   end
 
